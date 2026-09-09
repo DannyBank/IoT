@@ -128,6 +128,10 @@ def read_components():
     }
 
 def apply_command(command):
+    print("*****Printing command******")
+    print(command)
+    print("*******End printing********")
+    
     component = command.get("component")
     action = command.get("action")
     value = (command.get("parameters") or {}).get("value")
