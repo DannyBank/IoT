@@ -1,0 +1,11 @@
+problem:
+git was unable to push commits to the repository
+
+cause:
+an earlier code committed contained ffmpeg.exe which
+was greater than 100mb, the size threshold for pushing.
+
+solution:
+git filter-branch --force --index-filter \
+  "git rm --cached --ignore-unmatch ffmpeg.exe ffplay.exe ffprobe.exe" \
+  --prune-empty --tag-name-filter cat -- --all
