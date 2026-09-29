@@ -16,14 +16,17 @@ PUSH_BUTTON_1_DATAPIN = 26
 BUZZER_1_GROUNDPIN = "GND"
 BUZZER_1_CONTROLPIN = 33
 
-WIFI_SSID = "ZTE_581E0C_2.4G"
-WIFI_PASSWORD = "20260580"
+WIFI_SSID = "DBANK-WIFI"
+WIFI_PASSWORD = "D@@nn33ll1234"
 MQTT_HOST = "mqtt.iotworkshop.africa"
 MQTT_PORT = 8883
 MQTT_USER = "device_dev_5OZSZ22waF6xn0eF".encode()
 MQTT_PASSWORD = "cHM5sreChkeYBQgx3fMN0LchMDCxTUn0x-MhN48gMyQ".encode()
-MQTT_CA_FILE = "mqtt-ca.crt"
-MQTT_CA_CERT ="""MIIFTzCCAzegAwIBAgIUW2cDxTCTlyzl3FEHsxzcFnVVcZgwDQYJKoZIhvcNAQEL
+TELEMETRY_TOPIC = "dev_5OZSZ22waF6xn0eF/data".encode()
+COMMAND_TOPIC = "dev_5OZSZ22waF6xn0eF/cmd".encode()
+RESULT_TOPIC = "dev_5OZSZ22waF6xn0eF/result".encode()
+MQTT_CA_CERT = """-----BEGIN CERTIFICATE-----
+MIIFTzCCAzegAwIBAgIUW2cDxTCTlyzl3FEHsxzcFnVVcZgwDQYJKoZIhvcNAQEL
 BQAwNzEgMB4GA1UEAwwXSW9UQ29ubmVjdCBNUVRUIFJvb3QgQ0ExEzARBgNVBAoM
 CklvVENvbm5lY3QwHhcNMjYwNzIxMjEwODE2WhcNMzYwNzE4MjEwODE2WjA3MSAw
 HgYDVQQDDBdJb1RDb25uZWN0IE1RVFQgUm9vdCBDQTETMBEGA1UECgwKSW9UQ29u
@@ -51,14 +54,14 @@ hQslPTqEurXRkArGO7XL7bvWC3jPOrPGUwIg36JV/E59jDYO5zJngx5pwS20c5pG
 vCbZfKR3qoX/Uc+haxav5BWxtqHrO25CNU5CQmFKBioS5A2YZaAYOS5FR5yLSxwB
 5qkfHkiODM5uHncrCDyYFWBl4xxfxYzMxmMrXD92J+8W0EnQIMLpjjnXUPG/n44N
 TeIJV1n3w3mhwpx4c7fZKCI+KwcJu48ezSonnMgPvwZP7Q/wqd3wCJdeIEtJwlX/
-lm9gtTo4bhRLYjk4meM9lHjxvQ=="""
-TELEMETRY_TOPIC = "dev_5OZSZ22waF6xn0eF/data".encode()
-COMMAND_TOPIC = "dev_5OZSZ22waF6xn0eF/cmd".encode()
-RESULT_TOPIC = "dev_5OZSZ22waF6xn0eF/result".encode()
+lm9gtTo4bhRLYjk4meM9lHjxvQ==
+-----END CERTIFICATE-----
+"""
+ca_cert_data = MQTT_CA_CERT.encode()
 
 i2c = I2C(0, scl=Pin(22), sda=Pin(21))
 
-print("I2C devices:", [hex(x) for x in i2c.scan()])
+#print("I2C devices:", [hex(x) for x in i2c.scan()])
 
 aht20 = ahtx0.AHT20(i2c)
 bmp = bmp280.BMP280(i2c, addr=0x77)

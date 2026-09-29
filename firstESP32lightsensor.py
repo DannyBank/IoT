@@ -2,7 +2,7 @@ import machine
 import time
 
 # Pin Definition (Use an ADC1 pin like GPIO 34, 35, 36, or 39)
-TEMT6000_PIN = 14
+TEMT6000_PIN = 34
 
 # Configure ADC Pin
 adc = machine.ADC(machine.Pin(TEMT6000_PIN))
