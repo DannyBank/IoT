@@ -2,9 +2,9 @@ import machine
 import time
 
 # Pin Definitions
-RED_PIN = 12
-AMBER_PIN = 13
-GREEN_PIN = 14
+RED_PIN = 25
+AMBER_PIN = 26
+GREEN_PIN = 33
 
 # Initialize Pins as Outputs
 red_led = machine.Pin(RED_PIN, machine.Pin.OUT)

@@ -2,7 +2,7 @@ from machine import Pin, PWM
 from time import sleep
 
 # Connect the SG90 signal wire to GPIO 25
-SERVO_PIN = 25
+SERVO_PIN = 13
 
 servo = PWM(Pin(SERVO_PIN), freq=80)
 

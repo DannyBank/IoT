@@ -3,9 +3,9 @@ from machine import Pin, PWM
 
 # Setup PWM pins (Adjust GPIO pin numbers to match your wiring)
 # Typical pins shown below (e.g., Raspberry Pi Pico / ESP32)
-pin_red = Pin(12, Pin.OUT)
-pin_yellow = Pin(13, Pin.OUT)
-pin_green = Pin(14, Pin.OUT)
+pin_red = Pin(25, Pin.OUT)
+pin_yellow = Pin(26, Pin.OUT)
+pin_green = Pin(33, Pin.OUT)
 
 # Initialize PWM on each pin at 1000 Hz
 pwm_red = PWM(pin_red, freq=1000)

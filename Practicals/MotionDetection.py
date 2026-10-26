@@ -1,7 +1,7 @@
 from machine import Pin
 from time import sleep
 
-pir = Pin(14, Pin.IN)
+pir = Pin(13, Pin.IN)
 
 while True:
     if pir.value() == 1:
